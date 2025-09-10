@@ -1,0 +1,133 @@
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #6a11cb, #2575fc); /* adjust to your logo colors */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  height: 2.5rem;
+  width: auto;
+  margin-right: 12px;
+  vertical-align: middle;
+}
+
+/* 2) Full-width header; color lives here */
+.header {
+  background-color: #020713;
+  color: #ffffff;
+}
+
+/* 3) Only the *inner* container is centered and width-limited */
+.header {
+  width: 100%;
+  margin: 0 auto;
+  padding: 1rem 0;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* 4) Lay out the nav inline and remove list bullets/margins */
+.header nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+.header a {
+  color: #61dafb;
+  text-decoration: none;
+}
+
+.dev {
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+/* Logo text and nav link hover */
+.glaze {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.glaze::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.2) 0%,
+    rgba(255, 255, 255, 0.5) 50%,
+    rgba(255, 255, 255, 0.2) 100%
+  );
+  transition: all 0.5s ease;
+}
+
+.glaze:hover::after {
+  left: 100%;
+}
+
+/* Logo hover */
+.glaze-img{
+  position:relative;
+  display:inline-flex;
+  overflow:hidden;          /* keep the shine inside the logo box */
+  border-radius:8px;        /* optional */
+}
+.glaze-img::after{
+  content:"";
+  position:absolute;
+  top:-10%;
+  left:-180%;
+  width:60%;
+  height:120%;
+  background: linear-gradient(120deg,
+    rgba(255,255,255,0) 0%,
+    rgba(255,255,255,.35) 50%,
+    rgba(255,255,255,0) 100%);
+  transform: skewX(-20deg);
+  opacity:0;
+  transition: left .6s ease, opacity .2s ease;
+  pointer-events:none;
+}
+
+.glaze-img:hover::after{
+  left:140%;
+  opacity:1;
+}
+
+.logo-img{
+  display:block;            
+  height:2.5rem;
+  width:auto;
+}
+
