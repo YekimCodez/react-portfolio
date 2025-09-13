@@ -1,6 +1,7 @@
 // src/Header.js
 import React from 'react';
 import logo from '../assets/my_logo_cropped_mikedev.png';
+import Socials from './Socials';
 
 function Header() {
   return (
@@ -14,6 +15,7 @@ function Header() {
                 <span className="text-2x1 font-bold">Mike<span className="dev glaze gradient-text">Dev</span>
                 </span>
             </div>
+            <Socials />
             <ul>
               <li><a className="glaze gradient-text" href="/">Home</a></li>
               <li><a className="glaze gradient-text" href="/about">About me</a></li>

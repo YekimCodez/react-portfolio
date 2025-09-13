@@ -12,18 +12,6 @@
   color: transparent;
 }
 
-.logo {
-  display: flex;
-  align-items: center;
-}
-
-.logo-img {
-  height: 2.5rem;
-  width: auto;
-  margin-right: 12px;
-  vertical-align: middle;
-}
-
 .main-section {
   background: url('./assets/desktop_setup_2.png') no-repeat center center/cover; 
   background-blend-mode: overlay;
@@ -139,10 +127,16 @@
   opacity:1;
 }
 
-.logo-img{
-  display:block;            
-  height:2.5rem;
-  width:auto;
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  height: 2.5rem;
+  width: auto;
+  margin-right: 12px;
+  vertical-align: middle;
 }
 
 .profile-image {
@@ -178,6 +172,7 @@
   color: white;
   cursor: pointer;
   overflow: hidden; 
+  margin-top: 1rem;
 }
 
 .btn::after {
@@ -202,4 +197,56 @@
 .btn:hover::after {
   left: 140%;
   opacity: 1;
+}
+
+.socials {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-icon {
+  width: 32px;
+  height: 32px;
+  transition: transform 0.3s ease;
+}
+
+.socials a {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  font-size: 1.5rem;       /* size of icons (adjust as needed) */
+  color: #61dafb;          /* default color (React blue for example) */
+  text-decoration: none;   /* remove underline from <a> */
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.socials a::after {
+  content: "";
+  position: absolute;
+  top: -10%;
+  left: -150%;                 /* start off-screen */
+  width: 60%;
+  height: 120%;
+  background: linear-gradient(
+    120deg,
+    rgba(255,255,255,0) 0%,
+    rgba(255,255,255,0.5) 50%,
+    rgba(255,255,255,0) 100%
+  );
+  transform: skewX(-20deg);
+  opacity: 0;
+  transition: left 0.6s ease, opacity 0.3s ease;
+  pointer-events: none;        /* no blocking clicks */
+}
+
+.socials a:hover::after {
+  left: 150%;                  /* sweep across */
+  opacity: 1;
+}
+
+.socials a:hover {
+  color: #2575fc;          /* hover color (matches your gradient theme) */
+  transform: scale(1.1);   /* slightly enlarge on hover */
 }
