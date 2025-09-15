@@ -36,16 +36,6 @@ function Nav() {
           Contact
         </NavLink>
       </li>
-      <li>
-        <NavLink
-          to="/projects"
-          className={({ isActive }) =>
-            isActive ? "glaze gradient-text active-link" : "glaze gradient-text"
-          }
-        >
-          Projects
-        </NavLink>
-      </li>
     </ul>
   );
 }

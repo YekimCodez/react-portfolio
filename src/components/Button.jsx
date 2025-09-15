@@ -1,9 +1,15 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 function Button() {
-    return (
-        <button className="btn">View Work</button>
-    )
+  return (
+    <NavLink 
+        to="/projects" 
+        className={({ isActive }) => isActive ? "btn active-btn" : "btn"}
+        >
+        View Work
+    </NavLink>
+  );
 }
 
 export default Button;

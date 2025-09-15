@@ -3,13 +3,15 @@ import profile from "../assets/my_profile_pic.png";
 
 function About() {
   return (
-    <div>
-      <h1>About Me</h1>
-      <img src={profile} alt="Profile" />
-      <p>
-        I am a passionate web developer with experience in building dynamic
-        web applications.
-      </p>
+    <div className="about_container">
+      <h1 className="about-heading">About Me</h1>
+      <div className="profile_wrapper">
+          <img src={profile} alt="Profile" className="about_profile_image" />
+          <p className="about-text">
+            I am a passionate web developer with experience in building dynamic
+            web applications.
+          </p>
+      </div>
     </div>
   );
 }
