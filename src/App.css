@@ -1,11 +1,11 @@
-*, *::before, *::after {
+ *, *::before, *::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
 .gradient-text {
-  background: linear-gradient(90deg, #6a11cb, #2575fc); /* adjust to your logo colors */
+  background: linear-gradient(90deg, #6a11cb, #2575fc); 
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -15,24 +15,24 @@
 .main-section {
   background: url('./assets/desktop_setup_2.png') no-repeat center center/cover; 
   background-blend-mode: overlay;
-  min-height: 90vh; /* Ensure it takes at least full viewport height */
+  min-height: 90vh; 
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #121212; /* Dark background for contrast */
-  color: #ffffff; /* Light text color for readability */
+  background-color: #121212; 
+  color: #ffffff; 
   padding: 2rem;
   text-align: left
 }
 
-/* 2) Full-width header; color lives here */
+
 .header {
-  background-color: #020713;
+  background-color: #081c4981;
   color: #ffffff;
 }
 
-/* 3) Only the *inner* container is centered and width-limited */
+
 .header {
   width: 100%;
   margin: 0 auto;
@@ -45,7 +45,7 @@
   padding: 0 2rem;
 }
 
-/* 4) Lay out the nav inline and remove list bullets/margins */
+
 .header nav {
   display: flex;
   align-items: center;
@@ -70,7 +70,7 @@
   font-weight: bold;
 }
 
-/* Logo text and nav link hover */
+
 .glaze {
   position: relative;
   display: inline-flex;
@@ -98,7 +98,7 @@
   left: 100%;
 }
 
-/* Logo hover */
+
 .glaze-img{
   position:relative;
   display:inline-flex;
@@ -216,9 +216,9 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  font-size: 1.5rem;       /* size of icons (adjust as needed) */
-  color: #61dafb;          /* default color (React blue for example) */
-  text-decoration: none;   /* remove underline from <a> */
+  font-size: 1.5rem;       
+  color: #61dafb;          
+  text-decoration: none;   
   transition: transform 0.3s ease, color 0.3s ease;
 }
 
@@ -226,7 +226,7 @@
   content: "";
   position: absolute;
   top: -10%;
-  left: -150%;                 /* start off-screen */
+  left: -150%;                 
   width: 60%;
   height: 120%;
   background: linear-gradient(
@@ -238,15 +238,17 @@
   transform: skewX(-20deg);
   opacity: 0;
   transition: left 0.6s ease, opacity 0.3s ease;
-  pointer-events: none;        /* no blocking clicks */
+  pointer-events: none;        
 }
 
 .socials a:hover::after {
-  left: 150%;                  /* sweep across */
+  left: 150%;                  
   opacity: 1;
 }
 
 .socials a:hover {
-  color: #2575fc;          /* hover color (matches your gradient theme) */
-  transform: scale(1.1);   /* slightly enlarge on hover */
-}
+  color: #2575fc;          
+  transform: scale(1.1);   
+} 
+
+
