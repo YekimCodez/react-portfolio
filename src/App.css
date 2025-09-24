@@ -295,8 +295,8 @@
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 1rem;
   box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
-  backdrop-filter: blur(12px);   /* frosted glass */
-  -webkit-backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);   /* frosted glass */
+  backdrop-filter: blur(12px);
   color: #fff;                  
   text-align: left;             
 }
@@ -364,21 +364,115 @@
   box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(12px);
 }
+
+/* Base header layout stays as you have it... */
+
+/* --- NAV WRAP --- */
+.nav-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* --- DESKTOP NAV --- */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+/* --- HAMBURGER (hidden on desktop) --- */
+.hamburger {
+  display: none;
+  width: 36px;
+  height: 32px;
+  position: relative;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  margin-left: 1rem;
+}
+
+.hamburger .bar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 3px;
+  border-radius: 2px;
+  background: #ffffff;
+  box-shadow: 0 1px 2px rgba(0,0,0,.25);
+  transition: transform .25s ease, opacity .2s ease, top .25s ease;
+}
+
+.hamburger .bar:nth-child(1) { top: 6px; }
+.hamburger .bar:nth-child(2) { top: 14px; }
+.hamburger .bar:nth-child(3) { top: 22px; }
+
+/* X animation */
+.hamburger.is-open .bar:nth-child(1) {
+  top: 14px; transform: rotate(45deg);
+}
+.hamburger.is-open .bar:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.is-open .bar:nth-child(3) {
+  top: 14px; transform: rotate(-45deg);
+}
+
+/* --- MOBILE MENU --- */
 @media (max-width: 768px) {
-  .contact-section {
-    flex-direction: column;
+  /* show hamburger, hide inline links by default */
+  .hamburger { display: inline-block; }
+
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    display: block;
+    background: rgba(2,7,19,0.98);      /* matches your dark header */
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    transform: translateY(-10px);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity .2s ease, transform .2s ease, visibility .2s;
+    z-index: 20;
   }
 
-  .contact-home, .contact-form {
-    width: 100%;
-    padding: 1rem;
+  .nav-links.open {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
   }
 
-  .submitForm {
-    width: 80%;
-    margin: 2rem auto;
-    padding: 2rem 1rem;
+  .nav-links li {
+    padding: 0.9rem 1.25rem;
+    border-top: 1px solid rgba(255,255,255,0.06);
   }
+
+  .nav-links a {
+    display: inline-block;
+    font-size: 1rem;
+  }
+
+  /* Dim page behind menu */
+  .nav-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    backdrop-filter: blur(1px);
+    z-index: 10;
+  }
+}
+
+/* Keep desktop inline layout */
+@media (min-width: 769px) {
+  .nav-links { display: flex; }
 }
 
 
