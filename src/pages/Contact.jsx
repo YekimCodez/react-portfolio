@@ -1,10 +1,10 @@
-import React from "react";
+import ContactForm from "../components/ContactForm";
 
 function Contact() {
   return (
-    <div>
-      <h1>Contact Me</h1>
-      <p>You can reach me at: example@email.com</p>
+    <div className="container">
+      <h1 className="contact-header">Contact Me</h1>
+      <ContactForm />
     </div>
   );
 }

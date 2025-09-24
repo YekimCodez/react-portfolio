@@ -17,7 +17,7 @@ function Header() {
               <span className="text-2x1 font-bold">Mike<span className="dev glaze gradient-text">Dev</span>
                 </span>
             </div>
-            <Socials />
+            
             <Nav />
         </nav>
       </div>

@@ -1,5 +1,6 @@
 import React from 'react';
 import Button from './Button';
+import Footer from './Footer';
 // import profile from '../assets/portfolio-pic.png';
 
 function Main() {
@@ -16,6 +17,7 @@ function Main() {
             <Button />
           </section>
       </div>
+      
     </main>
   );
 }
