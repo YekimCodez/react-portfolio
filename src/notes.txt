@@ -1,0 +1,115 @@
+// src/components/ContactForm.jsx
+// import React, { useState, useRef } from 'react';
+// import emailjs from '@emailjs/browser';
+// import Socials from './Socials';
+
+// function ContactForm() {
+//   const formRef = useRef(null);
+//   const [name, setName] = useState('');
+//   const [email, setEmail] = useState('');
+//   const [message, setMessage] = useState('');
+//   const [status, setStatus] = useState({ sending: false, ok: null, msg: '' });
+
+//   emailjs.sendForm(
+//   import.meta.env.VITE_EMAILJS_SERVICE_ID,
+//   import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+//   ContactForm.current,
+//   { publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY }
+// )
+
+
+//   const handleSubmit = async (e) => {
+//     e.preventDefault();
+//     setStatus({ sending: true, ok: null, msg: '' });
+
+//     try {
+//       await emailjs.sendForm(
+//         import.meta.env.VITE_EMAILJS_SERVICE_ID || 'service_2mhlecq',
+//         import.meta.env.VITE_EMAILJS_TEMPLATE_ID || 'template_78hpsac',
+//         formRef.current,
+//         { publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY || 'yo6BkGXEUcbkIb2Ix' }
+//       );
+
+//       setStatus({ sending: false, ok: true, msg: 'Message sent — thank you!' });
+//       setName('');
+//       setEmail('');
+//       setMessage('');
+//       formRef.current?.reset(); // ensures the form DOM resets too
+//     } catch (err) {
+//       console.error(err);
+//       setStatus({ sending: false, ok: false, msg: 'Failed to send. Please try again.' });
+//     }
+//   };
+
+//   return (
+//     <div className="contact-section">
+//       <div className="contact-home">
+//         <h2>Get in Touch</h2>
+//         <p>
+//           If you have any questions or would like to work together, please fill out the form
+//           or reach out via my socials and tell me about your project.
+//         </p>
+//         <Socials />
+//       </div>
+
+//       <form className="submitForm" ref={formRef} onSubmit={handleSubmit} noValidate>
+//         <div className="form-group">
+//           <label htmlFor="name">Name:</label>
+//           <input
+//             className="inputField"
+//             type="text"
+//             id="name"
+//             name="name"                
+//             placeholder="Your full name"
+//             value={name}
+//             onChange={(e) => setName(e.target.value)}
+//             required
+//           />
+//         </div>
+
+//         <div className="form-group">
+//           <label htmlFor="email">Email:</label>
+//           <input
+//             className="inputField"
+//             type="email"
+//             id="email"
+//             name="email"              
+//             placeholder="Your email address"
+//             value={email}
+//             onChange={(e) => setEmail(e.target.value)}
+//             required
+//           />
+//         </div>
+
+//         <div className="form-group">
+//           <label htmlFor="message">Message:</label>
+//           <textarea
+//             className="textArea"
+//             id="message"
+//             name="message"            
+//             rows="5"
+//             placeholder="Your message"
+//             value={message}
+//             onChange={(e) => setMessage(e.target.value)}
+//             required
+//           />
+//         </div>
+
+//         {/* Honeypot anti-bot field (kept invisible) */}
+//         <input type="text" name="website" tabIndex={-1} autoComplete="off" style={{ display: 'none' }} />
+
+//         <button className="submitButton" type="submit" disabled={status.sending}>
+//           {status.sending ? 'Sending...' : 'Send Message'}
+//         </button>
+
+//         {status.ok !== null && (
+//           <p style={{ marginTop: '0.75rem', color: status.ok ? '#22c55e' : '#ef4444' }}>
+//             {status.msg}
+//           </p>
+//         )}
+//       </form>
+//     </div>
+//   );
+// }
+
+// export default ContactForm;
