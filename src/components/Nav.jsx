@@ -1,6 +1,8 @@
 // src/components/Nav.jsx
+
 import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
+import Socials from "./Socials"; // import your socials component
 
 const BREAKPOINT = 768; // px
 
@@ -69,10 +71,16 @@ function Nav() {
         </li>
       </ul>
 
+      {/* Divider + Socials */}
+      <div className="nav-divider" />
+      <div className="nav-socials">
+        <Socials />
+      </div>
+
       {/* Optional dark overlay behind mobile menu */}
       {open && <div className="nav-overlay" onClick={() => setOpen(false)} />}
     </div>
   );
 }
 
-export default Nav; 
+export default Nav;
