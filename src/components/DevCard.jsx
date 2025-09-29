@@ -3,7 +3,7 @@ import React from "react";
 export default function DevCard({
   src,
   name = "Michael Doughty",
-  title = "Frontend Web Developer",
+  title = "Frontend Developer",
   variant = "halo", // "halo" | "happy" | "ember"
 }) {
   return (

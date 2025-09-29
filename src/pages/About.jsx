@@ -1,34 +1,8 @@
-// import React from "react";
-// import profile from "../assets/photo_with_bg_removed.png";
-// import TechStack from "../components/TechStack";
-
-// function About() {
-//   return (
-//     <div className="about_container">
-//       <h2 className="about-heading">About Me</h2>
-//       <div className="profile_wrapper">
-//           <img src={profile} alt="Profile" className="about_profile_image" />
-//           <p className="about-text">
-//             I am a passionate web developer with experience in building dynamic
-//             web applications.
-//           </p>
-
-//           <section className="skills_section">
-//             <h3 className="skills_heading">Skills</h3>
-            
-//             <TechStack />
-//           </section>
-//       </div>
-//     </div>
-//   );
-// }
-
-// export default About;
-
 import React from "react";
 import profile from "../assets/photo_with_bg_removed.png";
 import TechStack from "../components/TechStack";
 import DevCard from "../components/DevCard";
+import Certificates from "../components/Certificates";
 
 function About() {
   return (
@@ -51,6 +25,7 @@ function About() {
             <h3 className="skills_heading">Tech Stack</h3>
             <TechStack />
           </section>
+            <Certificates />
         </div>
       </div>
     </div>
