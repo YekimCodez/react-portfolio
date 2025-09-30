@@ -11,11 +11,11 @@ const CertificateModal = ({ isOpen, onClose, cert }) => {
         </button>
         <h3>{cert.title}</h3>
         {/* If PDF: use iframe, if image: use img */}
-        <iframe
+        <img
           src={cert.file}
           title={cert.title}
           className="cert-frame"
-        ></iframe>
+        />
       </div>
     </div>
   );
