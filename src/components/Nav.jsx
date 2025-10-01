@@ -69,6 +69,10 @@ function Nav() {
             Contact
           </NavLink>
         </li>
+
+        <li className="nav-socials-row">
+          <Socials />
+        </li>
       </ul>
 
       {/* Divider + Socials */}

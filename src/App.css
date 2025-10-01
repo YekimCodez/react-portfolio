@@ -756,6 +756,94 @@
   border: none;
 }
 
+/* Let color show on hover even when .gradient-text is present */
+.nav-links a.gradient-text:hover,
+.nav-links a.gradient-text:focus {
+  background: none !important;
+  -webkit-background-clip: initial !important;
+  background-clip: initial !important;
+  -webkit-text-fill-color: currentColor !important;
+  color: #f39c12 !important;
+}
+
+/* If you want the same on desktop-socials links using .glaze */
+.nav-socials a:hover,
+.nav-socials-row a:hover {
+  color: #f39c12;
+}
+
+
+/* ------------------------------
+   NAV — variables + stacking
+------------------------------ */
+:root { --header-h: 64px; }      /* adjust to your real header height */
+
+/* Make the header sit above overlay/menu */
+.header { position: relative; z-index: 100; }
+
+/* Desktop: show inline socials, hide the in-menu row */
+.nav-socials-row { display: none; }
+
+/* Tidy the desktop divider & socials */
+.nav-divider { width:1px; height:24px; background:rgba(255,255,255,.3); }
+.nav-socials { display:flex; gap:.75rem; }
+
+/* ------------------------------
+   MOBILE MENU: full-width dropdown
+------------------------------ */
+@media (max-width: 768px) {
+  /* Show burger */
+  .hamburger { display: inline-flex; z-index: 1100; }
+
+  /* The dropdown panel */
+  .nav-links {
+    position: fixed;              /* stick to viewport */
+    top: var(--header-h);
+    left: 0;
+    right: 0;
+    width: 100%;
+    max-height: calc(100dvh - var(--header-h));
+    overflow-y: auto;
+    display: block;
+    background: rgba(2,7,19,0.98);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    transform: translateY(-8px);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity .2s ease, transform .2s ease, visibility .2s;
+    z-index: 1050;                /* above overlay */
+  }
+  .nav-links.open {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  .nav-links li { padding: .9rem 1.25rem; border-top: 1px solid rgba(255,255,255,.06); }
+  .nav-links a { display:inline-block; font-size: 1rem; }
+
+  /* Use a dark overlay behind the dropdown */
+  .nav-overlay {
+    position: fixed; inset: 0;
+    background: rgba(0,0,0,.55);
+    z-index: 1000;                /* under menu, over page */
+  }
+
+  /* Hide desktop divider + socials beside the logo */
+  .nav-divider, .nav-socials { display: none; }
+
+  /* Show socials inside the menu */
+  .nav-socials-row {
+    display: flex;
+    gap: .9rem;
+    padding: 1rem 1.25rem;
+    border-top: 1px solid rgba(255,255,255,.12);
+  }
+}
+
+
 
 
 
