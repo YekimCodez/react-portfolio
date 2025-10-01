@@ -2,9 +2,9 @@ import React from "react";
 
 function Projects() {
   return (
-    <div>
-      <h1>My Projects</h1>
-      <p>Here are some of the things I’ve been working on…</p>
+    <div className="container projects-page">
+      <h1 className="projects-title">My Projects</h1>
+      <p className="projects-description">Coming soon...</p>
     </div>
   );
 }
